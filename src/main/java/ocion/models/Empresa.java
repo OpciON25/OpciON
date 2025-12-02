@@ -1,3 +1,4 @@
+package com.ocion.models;
 import java.lang.*;
 import java.time;
 import java.io.*;
@@ -19,7 +20,7 @@ public class Empresa extends Usuario{
         
         id = id2;
         this.nombreEmpresa = nombreEmpresa;
-        CIF = cIF;
+        this.CIF = cIF;
         this.fechaAlta = fechaAlta;
         this.calle = calle;
         this.ciudad = ciudad;
