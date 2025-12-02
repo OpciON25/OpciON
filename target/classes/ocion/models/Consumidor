@@ -1,0 +1,105 @@
+import java.lang.*;
+import java.time;
+import java.io.*;
+
+public class Consumidor extends Usuario{
+
+    private int id;
+    private String nombre;
+    private DateTime fechaAlta;
+    private String calle;
+    private String numeroCasa;
+    private String ciudad;
+    private String provincia;
+    private int telefono;
+    private Suscripcion suscripcion;
+
+    public Consumidor ( int id, String nombre, DateTime fechaAlta, String calle, String numeroCasa, String Ciudad,
+        String provincia, String telefono, Suscripcion suscripcion){
+            this.id = id;
+            this.nombre = nombre;
+            this.fechaAlta = fechaAlta;
+            this.calle = calle;
+            this.numeroCasa = numeroCasa;
+            this.ciudad = ciudad;
+            this.provincia = provincia;
+            this.telefono = telefono;
+            this.suscripcion = suscripcion;
+        }
+
+
+     public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+    public DateTime getFechaAlta() {
+        return fechaAlta;
+    }
+
+    public void setFechaAlta(DateTime fechaAlta) {
+        this.fechaAlta = fechaAlta;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public String getNumeroCasa() {
+        return numeroCasa;
+    }
+
+    public void setNumeroCasa(String numeroCasa) {
+        this.numeroCasa = numeroCasa;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public Suscripcion getSuscripcion() {
+        return suscripcion;
+    }
+
+    public void setTelefono(Suscripcion suscripcion) {
+        this.suscripcion = suscripcion;
+    }
+    
+
+}
