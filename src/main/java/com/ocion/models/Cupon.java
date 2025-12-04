@@ -1,6 +1,6 @@
 package com.ocion.models;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 /*import java.lang.*;
 import java.time.*;
@@ -10,13 +10,12 @@ public class Cupon {
     private int id;
     private String codigo;
     private float descuento;
-    private LocalDate duracionActivo;
     
-    public Cupon(int id, String codigo, float descuento, LocalDate duracionActivo) {
+    
+    public Cupon(int id, String codigo, float descuento) {
         this.id = id;
         this.codigo = codigo;
         this.descuento = descuento;
-        this.duracionActivo = duracionActivo;
     }
 
     public int getId() {
@@ -43,18 +42,9 @@ public class Cupon {
         this.descuento = descuento;
     }
 
-    public LocalDate getDuracionActivo() {
-        return duracionActivo;
-    }
-
-    public void setDuracionActivo(LocalDate duracionActivo) {
-        this.duracionActivo = duracionActivo;
-    }
-
     @Override
     public String toString() {
-        return "Cupon [id=" + id + ", codigo=" + codigo + ", descuento=" + descuento + ", duracionActivo="
-                + duracionActivo + "]";
+        return "Cupon [id=" + id + ", codigo=" + codigo + " y descuento=" + descuento +"]";
     }
 
     

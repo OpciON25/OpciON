@@ -1,5 +1,7 @@
 package com.ocion.models;
 
+import java.time.LocalDate;
+
 /*import java.lang.*;
 import java.time.*;
 import java.io.*;*/
@@ -9,16 +11,23 @@ public class Oferta {
     private String nombre;
     private String descripcion;
     private float precio;
+    private LocalDate duracionActivo;
     private int cupoOferta;
     private Cupon cupon;
+    private Suscripcion suscripcion;
+    private Categoria categoria;
     
-    public Oferta(int id, String nombre, String descripcion, float precio, int cupoOferta, Cupon cupon) {
+    public Oferta(int id, String nombre, String descripcion, float precio, int cupoOferta, Cupon cupon, 
+        LocalDate duracionActivo, Suscripcion suscripcion, Categoria categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.cupoOferta = cupoOferta;
         this.cupon = cupon;
+        this.duracionActivo = duracionActivo;
+        this.suscripcion = suscripcion;
+        this.categoria = categoria;
     }
     public int getId() {
         return id;
@@ -56,11 +65,37 @@ public class Oferta {
     public void setCupon(Cupon cupon) {
         this.cupon = cupon;
     }
+
+    public LocalDate getDuracionActivo() {
+        return duracionActivo;
+    }
+
+    public void setDuracionActivo(LocalDate duracionActivo) {
+        this.duracionActivo = duracionActivo;
+    }
+
+    public Suscripcion getSuscripcion() {
+        return suscripcion;
+    }
+
+    public void setSuscripcion(Suscripcion suscripcion) {
+        this.suscripcion = suscripcion;
+    }
+    
+    public Categoria getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
         return "Oferta [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio
-                + ", cupoOferta=" + cupoOferta + ", cupon=" + cupon + "]";
+                + ", cupoOferta=" + cupoOferta + ", cupon=" + cupon + ",duracionActivo=" + duracionActivo +
+                 ",suscripcion=" + suscripcion + ",catgeoria=" + categoria +"]";
     }
+   
 
     
 }

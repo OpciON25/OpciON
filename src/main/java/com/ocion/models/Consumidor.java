@@ -95,7 +95,7 @@ public class Consumidor extends Usuario{
         return suscripcion;
     }
 
-    public void setTelefono(Suscripcion suscripcion) {
+    public void setSuscripcion(Suscripcion suscripcion) {
         this.suscripcion = suscripcion;
     }
     
