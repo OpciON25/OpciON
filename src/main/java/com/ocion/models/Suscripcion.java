@@ -43,6 +43,6 @@ public class Suscripcion {
     public String toString() {
         return "Suscripcion [id=" + id + ", tipo=" + tipo + ", precio=" + precio + ", duracion=" + duracion + "]";
     }
-
+    
     
 }

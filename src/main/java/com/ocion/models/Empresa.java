@@ -1,6 +1,7 @@
 package com.ocion.models;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 /*import java.lang.*;
 import java.time.*;
@@ -94,6 +95,21 @@ public class Empresa extends Usuario{
 
     public void setOfertasActivas(Oferta[] ofertasActivas) {
         this.ofertasActivas = ofertasActivas;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Empresa [nombreEmpresa=" + nombreEmpresa + ", CIF=" + CIF + ", fechaAlta=" + fechaAlta + ", calle="
+                + calle + ", ciudad=" + ciudad + ", provincia=" + provincia + ", telefono=" + telefono
+                + ", ofertasActivas=" + Arrays.toString(ofertasActivas) + ", getId()=" + getId() + ", getEmail()="
+                + getEmail() + ", getPassword()=" + getPassword() + ", toString()=" + super.toString()
+                + ", getNombreEmpresa()=" + getNombreEmpresa() + ", getCIF()=" + getCIF() + ", getFechaAlta()="
+                + getFechaAlta() + ", getCalle()=" + getCalle() + ", getCiudad()=" + getCiudad() + ", getProvincia()="
+                + getProvincia() + ", getTelefono()=" + getTelefono() + ", getOfertasActivas()="
+                + Arrays.toString(getOfertasActivas()) + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+                + "]";
     }
 
     

@@ -15,11 +15,12 @@ public class Consumidor extends Usuario{
     private String numeroCasa;
     private String ciudad;
     private String provincia;
+    private int CP;
     private int telefono;
     private Suscripcion suscripcion;
 
     public Consumidor(String calle, String ciudad, LocalDate fechaAlta, int id, String nombre,
-         String numeroCasa, String provincia, Suscripcion suscripcion, int telefono,
+         String numeroCasa, String provincia, int CP, Suscripcion suscripcion, int telefono,
           String email, String password) {
         super(id, email, password);
         this.calle = calle;
@@ -28,6 +29,7 @@ public class Consumidor extends Usuario{
         this.nombre = nombre;
         this.numeroCasa = numeroCasa;
         this.provincia = provincia;
+        this.CP = CP;
         this.suscripcion = suscripcion;
         this.telefono = telefono;
     }
@@ -83,6 +85,14 @@ public class Consumidor extends Usuario{
         this.provincia = provincia;
     }
 
+    public int getCP() {
+        return CP;
+    }
+
+    public void setCP(int CP) {
+        this.CP = CP;
+    }
+
     public int getTelefono() {
         return telefono;
     }
@@ -98,6 +108,19 @@ public class Consumidor extends Usuario{
     public void setSuscripcion(Suscripcion suscripcion) {
         this.suscripcion = suscripcion;
     }
-    
+
+
+
+    @Override
+    public String toString() {
+        return "Consumidor [nombre=" + nombre + ", fechaAlta=" + fechaAlta + ", calle=" + calle + ", numeroCasa="
+                + numeroCasa + ", ciudad=" + ciudad + ", provincia=" + provincia + ", CP=" + CP + ", telefono="
+                + telefono + ", suscripcion=" + suscripcion + ", getId()=" + getId() + ", getEmail()=" + getEmail()
+                + ", getPassword()=" + getPassword() + ", toString()=" + super.toString() + ", getNombre()="
+                + getNombre() + ", getFechaAlta()=" + getFechaAlta() + ", getCalle()=" + getCalle()
+                + ", getNumeroCasa()=" + getNumeroCasa() + ", getCiudad()=" + getCiudad() + ", getProvincia()="
+                + getProvincia() + ", getCP()=" + getCP() + ", getTelefono()=" + getTelefono() + ", getSuscripcion()="
+                + getSuscripcion() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+    }
 
 }

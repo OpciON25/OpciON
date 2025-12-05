@@ -1,6 +1,7 @@
 package com.ocion.models;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 /*import java.lang.*;
 import java.time.*;
@@ -16,9 +17,12 @@ public class Oferta {
     private Cupon cupon;
     private Suscripcion suscripcion;
     private Categoria categoria;
+    private int cantidad;
+    private String[] opciones;
+
     
     public Oferta(int id, String nombre, String descripcion, float precio, int cupoOferta, Cupon cupon, 
-        LocalDate duracionActivo, Suscripcion suscripcion, Categoria categoria) {
+        LocalDate duracionActivo, Suscripcion suscripcion, Categoria categoria, int cantidad, String[] opciones) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -28,6 +32,8 @@ public class Oferta {
         this.duracionActivo = duracionActivo;
         this.suscripcion = suscripcion;
         this.categoria = categoria;
+        this.cantidad = cantidad;
+        this.opciones = opciones;
     }
     public int getId() {
         return id;
@@ -85,17 +91,43 @@ public class Oferta {
     public Categoria getCategoria() {
         return categoria;
     }
+
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
+    public int getCantidad()  {
+        return cantidad;
+    }
+
+    public void setCantidad (int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String[] getOpciones() {
+        return opciones;
+    }
+
+    public void setOpciones(String[] opciones) {
+        this.opciones = opciones;
+    }
+    
+    public boolean ofertasActivas() {
+        LocalDate hoy = LocalDate.now();
+        return duracionActivo.isAfter(hoy);
+    }
+    
     @Override
     public String toString() {
         return "Oferta [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio
-                + ", cupoOferta=" + cupoOferta + ", cupon=" + cupon + ",duracionActivo=" + duracionActivo +
-                 ",suscripcion=" + suscripcion + ",catgeoria=" + categoria +"]";
+                + ", duracionActivo=" + duracionActivo + ", cupoOferta=" + cupoOferta + ", cupon=" + cupon
+                + ", suscripcion=" + suscripcion + ", categoria=" + categoria + ", cantidad=" + cantidad + ", opciones="
+                + Arrays.toString(opciones) + ", getId()=" + getId() + ", getNombre()=" + getNombre()
+                + ", getDescripcion()=" + getDescripcion() + ", getPrecio()=" + getPrecio() + ", getCupoOferta()="
+                + getCupoOferta() + ", getCupon()=" + getCupon() + ", getDuracionActivo()=" + getDuracionActivo()
+                + ", getSuscripcion()=" + getSuscripcion() + ", getCategoria()=" + getCategoria() + ", getCantidad()="
+                + getCantidad() + ", getOpciones()=" + Arrays.toString(getOpciones()) + ", getClass()=" + getClass()
+                + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
     }
-   
-
-    
+  
 }
