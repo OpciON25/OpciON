@@ -8,14 +8,14 @@ import java.io.*;*/
 
 public class Cupon {
     private int id;
-    private String codigo;
-    private float descuento;
+    private Double descuento;
+    private Double cantidadFija;
     
     
-    public Cupon(int id, String codigo, float descuento) {
+    public Cupon(int id, double descuento, double cantidadFija) {
         this.id = id;
-        this.codigo = codigo;
         this.descuento = descuento;
+        this.cantidadFija = cantidadFija;
     }
 
     public int getId() {
@@ -26,27 +26,44 @@ public class Cupon {
         this.id = id;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public float getDescuento() {
+    public Double getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(float descuento) {
+    public void setDescuento(Double descuento) {
         this.descuento = descuento;
+    }
+
+    public double getCantidadFija() {
+        return cantidadFija;
+    }
+
+    public void setCantidadFija(double cantidadFija) {
+        this.cantidadFija = cantidadFija;
     }
 
     @Override
     public String toString() {
-        return "Cupon [id=" + id + ", codigo=" + codigo + " y descuento=" + descuento +"]";
+        return "Cupon [id=" + id + ",descuento=" + descuento + ",cantidadFija=" + cantidadFija +"]";
     }
 
-    
+    public double aplicarDescuento(double precio){
+        double precioFinal = precio;
+
+        if (this.descuento != null){
+            precioFinal = precioFinal - (precio*(this.descuento/100));
+        } 
+
+        if(this.cantidadFija != null){
+            precioFinal = precioFinal - this.cantidadFija;
+        }
+
+        return Math.max(precioFinal,0);
+
+
+
+    }
+
+
 
 }

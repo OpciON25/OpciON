@@ -9,6 +9,7 @@ import java.io.*;*/
 
 public class Oferta {
     private int id;
+    private Empresa empresa;
     private String nombre;
     private String descripcion;
     private float precio;
@@ -21,9 +22,10 @@ public class Oferta {
     private String[] opciones;
 
     
-    public Oferta(int id, String nombre, String descripcion, float precio, int cupoOferta, Cupon cupon, 
+    public Oferta(int id, String nombre, Empresa empresa, String descripcion, float precio, int cupoOferta, Cupon cupon, 
         LocalDate duracionActivo, Suscripcion suscripcion, Categoria categoria, int cantidad, String[] opciones) {
         this.id = id;
+        this.empresa = empresa;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -40,6 +42,12 @@ public class Oferta {
     }
     public void setId(int id) {
         this.id = id;
+    }
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
     public String getNombre() {
         return nombre;
@@ -116,18 +124,32 @@ public class Oferta {
         LocalDate hoy = LocalDate.now();
         return duracionActivo.isAfter(hoy);
     }
-    
+
+
     @Override
     public String toString() {
-        return "Oferta [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio
-                + ", duracionActivo=" + duracionActivo + ", cupoOferta=" + cupoOferta + ", cupon=" + cupon
-                + ", suscripcion=" + suscripcion + ", categoria=" + categoria + ", cantidad=" + cantidad + ", opciones="
-                + Arrays.toString(opciones) + ", getId()=" + getId() + ", getNombre()=" + getNombre()
-                + ", getDescripcion()=" + getDescripcion() + ", getPrecio()=" + getPrecio() + ", getCupoOferta()="
-                + getCupoOferta() + ", getCupon()=" + getCupon() + ", getDuracionActivo()=" + getDuracionActivo()
-                + ", getSuscripcion()=" + getSuscripcion() + ", getCategoria()=" + getCategoria() + ", getCantidad()="
-                + getCantidad() + ", getOpciones()=" + Arrays.toString(getOpciones()) + ", getClass()=" + getClass()
-                + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+        return "Oferta [id=" + id + ", empresa=" + empresa + ", nombre=" + nombre + ", descripcion=" + descripcion
+                + ", precio=" + precio + ", duracionActivo=" + duracionActivo + ", cupoOferta=" + cupoOferta
+                + ", cupon=" + cupon + ", suscripcion=" + suscripcion + ", categoria=" + categoria + ", cantidad="
+                + cantidad + ", opciones=" + Arrays.toString(opciones) + ", getId()=" + getId() + ", getEmpresa()="
+                + getEmpresa() + ", getNombre()=" + getNombre() + ", getDescripcion()=" + getDescripcion()
+                + ", getPrecio()=" + getPrecio() + ", getCupoOferta()=" + getCupoOferta() + ", getCupon()=" + getCupon()
+                + ", getDuracionActivo()=" + getDuracionActivo() + ", getSuscripcion()=" + getSuscripcion()
+                + ", getCategoria()=" + getCategoria() + ", getCantidad()=" + getCantidad() + ", getOpciones()="
+                + Arrays.toString(getOpciones()) + ", ofertasActivas()=" + ofertasActivas() + ", getClass()="
+                + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
     }
+    
+
+    public double getPrecioFinal(){
+
+        if (this.cupon != null){
+            return cupon.aplicarDescuento(this.precio);
+        }
+
+        return this.precio;
+    }
+    
+    
   
 }
