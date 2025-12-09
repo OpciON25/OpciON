@@ -17,5 +17,13 @@
         <input type="submit" value="Iniciar sesión">
 
     </form>
+
+    <%
+        if (request.getParameter("error") != null){
+    %>
+            <p styele="color: red;">Acceso denegado. Comprueba el email o la contraseña</p>        
+    <%
+        }
+    %>
 </body>
 </html>

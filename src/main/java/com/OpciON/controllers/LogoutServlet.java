@@ -1,4 +1,4 @@
-package com.ocion.controllers;
+package com.opcion.controllers;
 
 public class LogoutServlet {
 

@@ -1,4 +1,4 @@
-package com.ocion.models;
+package com.opcion.models;
 //import java.lang.*;
 import java.time.LocalDate;
 //import java.io.*;

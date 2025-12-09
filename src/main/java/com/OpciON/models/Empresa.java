@@ -1,4 +1,4 @@
-package com.ocion.models;
+package com.opcion.models;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ public class Empresa extends Usuario{
     public Empresa(String CIF, String calle, String ciudad, LocalDate fechaAlta,
          String nombreEmpresa, Oferta[] ofertasActivas, String provincia, int telefono,
           int id, String email, String password) {
-        super(id, email, password); //atributos de la clase madre
+        super(id, email, password, "empresa"); //atributos de la clase madre
         this.CIF = CIF;
         this.calle = calle;
         this.ciudad = ciudad;

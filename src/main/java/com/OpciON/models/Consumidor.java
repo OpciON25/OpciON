@@ -1,4 +1,4 @@
-package com.ocion.models;
+package com.opcion.models;
 
 import java.time.LocalDate;
 
@@ -22,7 +22,7 @@ public class Consumidor extends Usuario{
     public Consumidor(String calle, String ciudad, LocalDate fechaAlta, int id, String nombre,
          String numeroCasa, String provincia, int CP, Suscripcion suscripcion, int telefono,
           String email, String password) {
-        super(id, email, password);
+        super(id, email, password, "consumidor");
         this.calle = calle;
         this.ciudad = ciudad;
         this.fechaAlta = fechaAlta;

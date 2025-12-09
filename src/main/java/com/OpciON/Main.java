@@ -1,4 +1,4 @@
-package com.ocion;
+package com.opcion;
 
 public class Main {
     public static void main(String[] args) {

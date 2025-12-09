@@ -1,5 +1,14 @@
-package com.ocion.controllers;
+package com.opcion.controllers;
 
+import com.opcion.models.Usuario;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import java.io.IOException;
+import jakarta.servlet.annotation.WebServlet;
+import com.opcion.dao.RepositorioUsuarios;
+
+
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtenemos los parámetros del formulario
@@ -16,10 +25,12 @@ public class LoginServlet extends HttpServlet {
 
             // Redirigir a la pantalla principal
             if(usuario.getTipo().equals("interno")){
-                reponse.sendRedirect("panelGestion.jsp");
+                response.sendRedirect("panelGestion.jsp");
             }else{
                 response.sendRedirect("ofertas.jsp");
             }
+        }else{
+            response.sendRedirect("login.jsp?error=1");
         }  
     }
 }

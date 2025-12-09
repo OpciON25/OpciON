@@ -1,4 +1,4 @@
-package com.ocion.models;
+package com.opcion.models;
 
 /*import java.lang.*;
 import java.time.*;
@@ -8,12 +8,14 @@ public class Usuario {
     private int id;
     private String email;
     private String password;
+    private String tipo; // Interno, Consumidor, Empresa
     
 
-    public Usuario(int id, String email, String password) {
+    public Usuario(int id, String email, String password, String tipo) {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.tipo = tipo;
     }
 
     public int getId() {
@@ -38,6 +40,14 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getTipo (){
+        return tipo;
+    }
+
+    public void setTipo (String tipo){
+        this.tipo = tipo;
     }
 
     @Override
