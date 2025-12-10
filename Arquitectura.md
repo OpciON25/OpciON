@@ -27,9 +27,9 @@ src
                         dao
                         services
                         utils
-        webapp -> frontend JSP
-            WEB-INF
-            css
-            img
-            jsp files
+    webapp -> frontend JSP
+        WEB-INF
+        css
+        img
+        jsp files
             
