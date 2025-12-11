@@ -10,6 +10,9 @@ public class Cupon {
     private int id;
     private Double descuento;
     private Double cantidadFija;
+    private String generado;
+    private String canjeado;
+    private String caducado;
     
     
     public Cupon(int id, double descuento, double cantidadFija) {
